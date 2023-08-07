@@ -13,12 +13,22 @@ function App(){
 
 // job componenent: this is used on App component
 const Job = (props) =>{
+    var statut="low price", isGreen=false;
+    if( props.salary <=90000 ){
+        isGreen=false;
+    }else{
+        statut="great price";
+        isGreen=true;
+    }
     return (
     <>
-        <h1>salary: {props.salary}</h1>
-        <h2>posision {props.position}</h2>
-        <h2>Company {props.company}</h2>
-    </>)
+        <section className='job-item'>
+            <h1>salary: {props.salary}</h1>
+            <h2>posision {props.position}</h2>
+            <h2>Company {props.company}</h2>
+            <h2>Statut: <strong style={{color : isGreen ? "green" : "red"}}> {statut} </strong> </h2>
+        </section>
+    </>);
 }
 // export The main component
 export default App;
