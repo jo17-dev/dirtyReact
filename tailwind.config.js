@@ -3,8 +3,7 @@ module.exports = {
   content: [
     "./public/index.html",
     './src/Tuto.js',
-    "./src/Button.js",
-    "./src/TikTack.js",
+    './src/App.js',
   ],
   theme: {
     extend: {},

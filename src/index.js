@@ -2,19 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import Premier from './Premier.js';
-import './premier.css';
-import TikTack from './TikTack.js';
-import Tuto from './Tuto.js';
-import Test from './Main.js';
+import App from './App.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Test/>
-    <Tuto user="Bobo" test="gmail" />
-    <Premier />
-    <TikTack />
+    <App />
   </React.StrictMode> 
 );
 
