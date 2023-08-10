@@ -1,39 +1,38 @@
 import { useState } from "react";
-
-function App(){
-    var tab ="Premier";
-
-    const [tasks, setTasks] = useState([tab]);
+import TaskItem from "./TaskItem.jsx";
 
 
-    function addTask(){
-        {
-            tab.push(document.getElementById('name').value);
-            setTasks(
-                tasks.push(document.getElementById('name').value)
-            );
-            console.log(tasks);
-        };
+const App = () =>{
+    const [tasks, setTasks] = useState(["Premiere tache", "deuxieme"]); //the state who save all the tasks
+
+    const addItem = () =>{ // operation of setting a new task 
+        if(document.getElementById('name').value != ''){ 
+            setTasks(tasks.concat(document.getElementById('name').value));
+        }
     }
 
-    return (
-        <>
-                <input type="text" name="name" id="name" />
-                <button onClick={addTask}>Add</button><br />
-            
-            {
-                tasks.map(function(item, key){
-                    console.log(key)
-                    return <Task title={item} key={key} />;
-                })
-            }
+    const deleteItem = (props) =>{
+        console.log("fuck")
+    }
 
-        </>
+    return(
+        <div>
+            <input type="text" id="name"/>
+            <button onClick={addItem}>Add</button>
+            <br />
+
+            <ul>
+                {tasks.reverse().map((item, cle)=>{ // here we loop on tasks to print all the datas
+                    return (
+                        <div key={cle}>
+                            <TaskItem title={item}  />
+                            <button onClick={deleteItem}>Delete</button>
+                        </div>
+                    );
+                })}
+            </ul>
+        </div>
     );
-}
-
-function Task(props){
-    return <p>{props.title}</p>;
 }
 
 export default App;
