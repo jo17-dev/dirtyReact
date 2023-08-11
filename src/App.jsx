@@ -11,9 +11,6 @@ const App = () =>{
         }
     }
 
-    const deleteItem = (props) =>{
-        console.log("fuck")
-    }
 
     return(
         <div>
@@ -23,8 +20,12 @@ const App = () =>{
 
             <ul>
                 {tasks.reverse().map((item, cle)=>{ // here we loop on tasks to print all the datas
+                    const deleteItem = ()=>{
+                        console.log(cle);
+                        // ici On entre les choss qui nous concnernen exactement..
+                    }
                     return (
-                        <div key={cle}>
+                        <div key={cle} >
                             <TaskItem title={item}  />
                             <button onClick={deleteItem}>Delete</button>
                         </div>
