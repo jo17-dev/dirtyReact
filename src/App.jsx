@@ -11,6 +11,22 @@ const App = () =>{
         }
     }
 
+    const deleteItem = (cle, name)=>{
+        // ici On entre les choss qui nous concnernen exactement..
+        console.log(cle+ " "+ name);
+
+        setTasks(
+            tasks.reverse().filter((item, itemkey)=>{
+                if(itemkey == cle){
+                    return false;
+                }else{
+                    return true;
+                }
+            })
+        );
+
+    }
+
 
     return(
         <div>
@@ -20,14 +36,11 @@ const App = () =>{
 
             <ul>
                 {tasks.reverse().map((item, cle)=>{ // here we loop on tasks to print all the datas
-                    const deleteItem = ()=>{
-                        console.log(cle);
-                        // ici On entre les choss qui nous concnernen exactement..
-                    }
+
                     return (
                         <div key={cle} >
                             <TaskItem title={item}  />
-                            <button onClick={deleteItem}>Delete</button>
+                            <button onClick={()=>{deleteItem(cle, item)}}>Delete</button>
                         </div>
                     );
                 })}
