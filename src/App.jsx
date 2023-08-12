@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TaskItem from "./TaskItem.jsx";
+import "./app.css";
 
 
 const App = () =>{
@@ -26,12 +27,19 @@ const App = () =>{
         );
 
     }
+    // this function is comming soon
+    const reverseitems = ()=>{
+        console.log();
+        setTasks(tasks);
+    }
 
 
     return(
-        <div>
-            <input type="text" id="name"/>
-            <button onClick={addItem}>Add</button>
+        <div id="app-container">
+            <div id="form">
+                <input type="text" id="name" placeholder="Enter a new task here"/>
+                <button onClick={addItem}>Add</button>
+            </div>
             <br />
 
             <ul>

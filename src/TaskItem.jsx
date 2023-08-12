@@ -1,3 +1,5 @@
+import "./taskItem.css";
+
 const TaskItem =(props)=>{
     return <li key={props.cle}> {props.title}</li>
 }

@@ -1,0 +1,6 @@
+li{
+    list-style-type: none;
+    border-bottom: 2px solid rgb(47, 139, 214);
+    width: 90%;
+    padding: 4px;
+}
