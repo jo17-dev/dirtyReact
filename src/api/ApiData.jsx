@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import '../tictackapp.css';
-
 const ApiData = () =>{
     const [fact, setFact] = useState("");
-    var catFact;
 
    const generateCatFact = function(){
         fetch("https://catfact.ninja/fact?max_length=100")
