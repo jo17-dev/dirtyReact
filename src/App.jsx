@@ -1,13 +1,13 @@
 import { useState } from "react";
 import TaskItem from "./TaskItem.jsx";
 import "./app.css";
-
+// You shoud add This component if you want yo display this todoApp
 
 const App = () =>{
-    const [tasks, setTasks] = useState(["Premiere tache", "deuxieme"]); //the state who save all the tasks
+    const [tasks, setTasks] = useState(["Premiere tache", "deuxieme tache"]); //the state who save all the tasks
 
     const addItem = () =>{ // operation of setting a new task 
-        if(document.getElementById('name').value != ''){ 
+        if(document.getElementById('name').value !== ''){ 
             setTasks(tasks.concat(document.getElementById('name').value));
         }
     }
@@ -18,7 +18,7 @@ const App = () =>{
 
         setTasks(
             tasks.reverse().filter((item, itemkey)=>{
-                if(itemkey == cle){
+                if(itemkey === cle){
                     return false;
                 }else{
                     return true;
@@ -26,11 +26,6 @@ const App = () =>{
             })
         );
 
-    }
-    // this function is comming soon
-    const reverseitems = ()=>{
-        console.log();
-        setTasks(tasks);
     }
 
 
