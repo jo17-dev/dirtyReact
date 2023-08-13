@@ -1,9 +1,11 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import App from './toDoApp/App.jsx';
 import "./index.css";
-import TickTackApp from './TicTackApp.jsx';
 import ApiData from './api/ApiData.jsx';
+import NavBar from './navbar/Navbar.jsx';
+import About from './about/About.jsx';
 
 
 
@@ -11,9 +13,25 @@ var destination = ReactDOM.createRoot(document.querySelector('#container'));
 
 
 destination.render(
-    <StrictMode>
-        {/* <TickTackApp /> */}
-        <App />
-        <ApiData />
-    </StrictMode>
+    <>
+            <Router>
+                <NavBar />
+            <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/api" element={<ApiData />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={ <h1>Page not Found</h1> } />
+            </Routes>
+            </Router>
+        <StrictMode>
+            {/* <TickTackApp /> */}
+            {/* <App />
+            <ApiData />
+            <RouteTest /> */}
+            {/* <Autre /> */}
+        </StrictMode>
+        <Router>
+        </Router>
+
+    </>
 );

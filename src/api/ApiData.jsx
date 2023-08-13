@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Axios from "axios";
-import '../tictackapp.css';
+import "./apidata.css";
 const ApiData = () =>{
     const [fact, setFact] = useState("");
     const [age, setAge] = useState();

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import TaskItem from "./TaskItem.jsx";
+import TaskItem from "../toDoApp/TaskItem.jsx";
 import "./app.css";
 // You shoud add This component if you want yo display this todoApp
 
 const App = () =>{
+
     const [tasks, setTasks] = useState(["Premiere tache", "deuxieme tache"]); //the state who save all the tasks
 
     const addItem = () =>{ // operation of setting a new task 
@@ -30,25 +31,27 @@ const App = () =>{
 
 
     return(
-        <div id="app-container">
-            <div id="form">
-                <input type="text" id="name" placeholder="Enter a new task here"/>
-                <button onClick={addItem}>Add</button>
+        <>
+            <div id="app-container">
+                <div id="form">
+                    <input type="text" id="name" placeholder="Enter a new task here"/>
+                    <button onClick={addItem}>Add</button>
+                </div>
+                <br />
+
+                <ul>
+                    {tasks.reverse().map((item, cle)=>{ // here we loop on tasks to print all the datas
+
+                        return (
+                            <div key={cle} >
+                                <TaskItem title={item}  />
+                                <button onClick={()=>{deleteItem(cle, item)}}>Delete</button>
+                            </div>
+                        );
+                    })}
+                </ul>
             </div>
-            <br />
-
-            <ul>
-                {tasks.reverse().map((item, cle)=>{ // here we loop on tasks to print all the datas
-
-                    return (
-                        <div key={cle} >
-                            <TaskItem title={item}  />
-                            <button onClick={()=>{deleteItem(cle, item)}}>Delete</button>
-                        </div>
-                    );
-                })}
-            </ul>
-        </div>
+        </>
     );
 }
 
