@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import TaskItem from "../toDoApp/TaskItem.jsx";
 import "./app.css";
 // You shoud add This component if you want yo display this todoApp
 
+export const AppContext = createContext();
+
 const App = () =>{
 
     const [tasks, setTasks] = useState(["Premiere tache", "deuxieme tache"]); //the state who save all the tasks
+    const [username, setUsername] = useState("JoelB");
 
     const addItem = () =>{ // operation of setting a new task 
         if(document.getElementById('name').value !== ''){ 
@@ -32,6 +35,7 @@ const App = () =>{
 
     return(
         <>
+            <AppContext.Provider value={{username, setUsername}}>
             <div id="app-container">
                 <div id="form">
                     <input type="text" id="name" placeholder="Enter a new task here"/>
@@ -51,6 +55,8 @@ const App = () =>{
                     })}
                 </ul>
             </div>
+            <h2>I am {username}</h2>
+            </AppContext.Provider>
         </>
     );
 }
