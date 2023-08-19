@@ -33,8 +33,6 @@ destination.render(
             <RouteTest /> */}
             {/* <Autre /> */}
         </StrictMode>
-        <Router>
-        </Router>
 
     </>
 );

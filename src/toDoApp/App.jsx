@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
 import TaskItem from "../toDoApp/TaskItem.jsx";
 import "./app.css";
+import ContextHookTuto from "../context/ContexHook.js";
 // You shoud add This component if you want yo display this todoApp
 
 export const AppContext = createContext();
@@ -32,7 +33,7 @@ const App = () =>{
 
     }
 
-
+// Note: the useContex can't work because bascily i didnt done well the architecture
     return(
         <>
             <AppContext.Provider value={{username, setUsername}}>
