@@ -7,6 +7,7 @@ const NavBar = ()=>{
             <Link to="/" className="link-item">To Do App</Link>
             <Link to="/api" className="link-item">Api testing</Link>
             <Link to="/context" className="link-item">useContext</Link>
+            <Link to="/custom-hook" className="link-item"> Custom hook</Link>
             <Link to="/about" className="link-item">About this</Link>
 
         </div>

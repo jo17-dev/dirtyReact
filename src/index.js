@@ -8,6 +8,7 @@ import ApiData from './api/ApiData.jsx';
 import NavBar from './navbar/Navbar.jsx';
 import About from './about/About.jsx';
 import ContexHookTuto from './context/ContexHook.js';
+import ShowHide from './costum/ShowHide.jsx';
 
 
 
@@ -23,6 +24,7 @@ destination.render(
                 <Route path="/api" element={<ApiData />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/context" element={<ContexHookTuto />} />
+                <Route path='/custom-hook' element={<ShowHide />} />
                 <Route path="*" element={ <h1>Page not Found</h1> } />
             </Routes>
             </Router>
