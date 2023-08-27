@@ -16,4 +16,3 @@ const ShowHide = ()=>{
 }
 
 export default ShowHide;
-// prochaine etape, faire passer le paramettre de depart en toogle

@@ -8,6 +8,7 @@ const NavBar = ()=>{
             <Link to="/api" className="link-item">Api testing</Link>
             <Link to="/context" className="link-item">useContext</Link>
             <Link to="/custom-hook" className="link-item"> Custom hook</Link>
+            <Link to="/ts" className="link-item"> typeScript</Link>
             <Link to="/about" className="link-item">About this</Link>
 
         </div>
