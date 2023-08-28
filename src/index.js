@@ -1,3 +1,5 @@
+
+
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -9,7 +11,7 @@ import NavBar from './navbar/Navbar.jsx';
 import About from './about/About.jsx';
 import ContexHookTuto from './context/ContexHook.js';
 import ShowHide from './costum/ShowHide.jsx';
-import Person from './typeScript/Person.js';
+import Person from './typeScript/Person.tsx';
 
 
 

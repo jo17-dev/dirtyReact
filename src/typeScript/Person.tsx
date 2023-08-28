@@ -1,8 +1,11 @@
+/*
+There is no typeScript on this file, there is propType "addons"
+*/
+
 import PropTypes from 'prop-types';
 import './person.css';
 
-const PrintPerson = (props)=>{
-	return (
+const PrintPerson = (props)=>{	return (
 		<>
 		<h4>Name: {props.name} </h4>
 		<h4> Age: {props.age} </h4>
@@ -21,6 +24,18 @@ const PrintPerson = (props)=>{
 		)
 }
 
+const TsPrintPerson = (props)=>{
+	var name: String = "Oui";
+	console.log(typeof(name));
+
+	return (
+	<>
+		<h3> Name: {name} </h3>
+		<h3> Age: {props.age} </h3>
+	</>
+	);
+}
+
 const Person = ()=>{
 
 
@@ -29,6 +44,7 @@ const Person = ()=>{
 	<>
 		<h1>Type Script</h1>
 		<PrintPerson name={"joel"} age={19} email="joel@gmail.com" friends={["joel", "Sarah", "Viken"]} />
+		<TsPrintPerson name={"Bobo"} age={67} />
 	</>
 		);
 }
